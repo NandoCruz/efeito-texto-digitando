@@ -12,7 +12,7 @@
 :root{
     --bg-color: #111111;
     --second-bg-color: #151515;
-    --text-color: white;
+    --text-color: #aaaaaa;
     --main-color: rgb(168, 0, 0);
 }
 
@@ -26,12 +26,27 @@ body{
     color: var(--text-color);
 }
 
+/* Scrollbar - Barra lateral */
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--bg-color);
+    width: 50px;
+}
+
+/* HEADER */
 .header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3rem 9%;
+    padding: 1rem 9%;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     display: flex;
@@ -40,11 +55,13 @@ body{
     z-index: 100;
 }
 
+/* LOGO */
 .logo{
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
     cursor: pointer;
+    letter-spacing: 1.3px;
     transition: 0.3s ease-in-out;
 }
 
@@ -52,11 +69,13 @@ body{
     transform: scale(1.1);
 }
 
+/* MENU DESKTOP */
 .navbar a{
-    font-size: 1.8rem;
-    color: white;
+    font-size: 1.5rem;
+    color: var(--text-color);
     margin-left: 4rem;
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 1.8px;
     transition: 0.3s ease-in-out;
     border-bottom: 3px solid transparent;
 }
@@ -68,15 +87,17 @@ body{
     border-bottom: 3px solid var(--main-color);
 }
 
+/* MENU ICON */
 #menu-icon{
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
 }
 
+/* SESSÃO HOME */
 section{
     min-height: 100vh;
-    padding: 10rem 9% 10rem;
+    padding: 6rem 9% 10rem;
 }
 
 .home{
@@ -104,26 +125,16 @@ span{
     color: var(--main-color);
 }
 
-.home-content h3{
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-    font-size: 3.5rem;
-}
+/* SESSÃO HOME */
 
-.home-content h1{
-    font-size: 7rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    line-height: 1;
-}
 .home-img{
     border-radius: 50%;
 }
 .home-img img{
     position: relative;
     top: 3rem;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
@@ -135,10 +146,24 @@ span{
                 0 0 100px var(--main-color);
 }
 
+.home-content h1{
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    line-height: 1;
+}
+
+.home-content h3{
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-size: 3.4rem;
+}
+
 .home-content p{
-    font-size: 1.5rem;
-    font-weight: 500;
-    max-width: 1000px;
+    font-size: 1.7rem;
+    font-weight: 300;
+    max-width: 800px;
+    letter-spacing: 1px;
 }
 
 .home-content .social-icon a{
@@ -157,7 +182,7 @@ span{
 }
 
 .home-content .social-icon a:hover{
-    color: white;
+    color: var(--text-color);
     transform: scale(1.3) translateY(-5px);
     box-shadow: 0 0 25px var(--main-color);
     background-color: var(--main-color);
@@ -165,17 +190,18 @@ span{
 
 .btn{
     display: inline-block;
-    padding: 1rem 2.8rem;
+    padding: 1rem 3rem;
     background: var(--main-color);
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: white;
+    color: var(--text-color);
     border: 2px solid transparent;
     letter-spacing: 0.1rem;
     font-weight: 600;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
+
 .btn:hover{
     transform: scale(1.05);
     box-shadow: 0 0 25px var(--main-color);
@@ -245,18 +271,60 @@ span{
     }
 }
 
+/* SESSÃO SOBRE */
+
 .sobre{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10rem;
     background-color: var(--second-bg-color);
-    color: white;
+    color: var(--text-color);
+}
+
+.heading{
+    text-align: center;
+    font-size: 6rem;
+}
+
+.about-content h2{
+    text-align: left;
+    line-height: 1.5;
 }
 
 .sobre h2 span{
     color: var(--main-color);
-    text-shadow: 0 0 50px var(--main-color);
+    text-shadow: 0 0 20px var(--main-color);
+}
+
+.about-content h3{
+    font-size: 3rem;
+}
+
+.about-content p{
+    font-size: 1.6rem;
+    max-width: 600px;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    letter-spacing: 0.8px;
+    word-spacing: 2px;
+}
+
+.about-content .text-animation span::before{
+    content: 'Web Developer';
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.about-content .text-animation span::after{
+    content: "";
+    background-color: var(--second-bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--second-bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
 
 .sobre-img{
@@ -265,7 +333,8 @@ span{
 
 .sobre-img img{
     position: relative;
-    width: 32vw;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     top: 1rem;
@@ -274,23 +343,66 @@ span{
 }
 
 .sobre-img img:hover{
-    box-shadow: 0 0 50px var(--main-color)
+    box-shadow: 0 0 50px var(--main-color),
                 0 0 100px var(--main-color);
 }
-.heading{
-    text-align: center;
-    font-size: 8rem;
+
+/* SESSÃO SERVIÇOS */
+
+.servicos{
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-.about-content h2{
+.servicos h2{
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    font-size: 5rem;
+}
+
+.servicos-container{
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.servico-box{
+    background-color: var(--main-color);
+    color: var(--text-color);
+    height: 200px;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.servico-box:hover{
+    background-color: var(--text-color);
+    color: var(--main-color);
+    transform: scale(1.03);
+}
+
+.servico-box .servico-info{
+    display: flex;
+    flex-direction: column;
     text-align: left;
-    line-height: 1.5;
+    max-height: 200px;
+    justify-content: center;
+    align-items: baseline;
+    padding: 5rem;
 }
 
-.about-content h3{
-    font-size: 2.6rem;
+.servico-box .servico-info h4{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-.about-content p{
+.servico-box .servico-info p{
     font-size: 1.6rem;
+    font-weight: 400;
+    max-width: 300px;
+    margin: auto;
 }
