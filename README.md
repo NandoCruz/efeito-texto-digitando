@@ -1,6 +1,8 @@
 # efeito-texto-digitando
  Efeito digitar texto automaticamente
 
+![site](https://github.com/NandoCruz/efeito-texto-digitando/blob/main/imagens/site-digitando-texto.png)
+
 ##
  ![AssinaturaOnLine](https://github.com/NandoCruz/PowerBI-dashboard/blob/main/imagens/AssinaturaOnLine.png)
 
